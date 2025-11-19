@@ -16,7 +16,7 @@ Este projeto implementa um simulador funcional para o processador didático RISC
 <table>
   <tr>
     <td align="center">
-      <a href="#"> <img src="https://avatars.githubusercontent.com/u/10137?v=4" width="100px;" alt="Foto de Clarisse Lacerda Pimentel"/>
+      <a href="#"> <img src="https://avatars.githubusercontent.com/u/134017049?v=4" width="100px;" alt="Foto de Clarisse Lacerda Pimentel"/>
         <br />
         <sub><b>Clarisse Lacerda Pimentel</b></sub>
       </a>
