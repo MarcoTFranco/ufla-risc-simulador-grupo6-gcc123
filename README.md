@@ -98,17 +98,21 @@ python -m unittest discover
 ## 5. 📁 ESTRUTURA DO PROJETO
 
 ```
-/ufla-risc-simulador-grupo6-gcc123/
 ├── binarios/
-│   └── programa.bin  # Exemplo de binário para execução
+│   └── binarios.txt      # Arquivos de instruções binárias
+│
+├── docs/                 # Documentação do projeto
+│
+├── exemplos/             # Exemplos de código Assembly (.asm)
 │
 ├── src/
-│   ├── simulador/
-│   │   └── main.py     # Ponto de entrada do simulador
-│   └── ...           # Outros módulos e testes
+│   └── simulador/
+│       ├── interpretador.py  # Converte Assembly para Binário
+│       ├── simulador.py      # Núcleo de execução da CPU (Main)
+│       └── testador.py       # Suite de testes automatizados
 │
 ├── .gitignore
-└── README.md         # Documentação do projeto
+└── README.md
 ```
 ## 5. 📁 LICENÇA
 
