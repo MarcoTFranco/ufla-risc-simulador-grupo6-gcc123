@@ -1,0 +1,13 @@
+# Caches do Python e Ferramentas
+__pycache__/
+*.pyc
+.mypy_cache/
+.vscode/
+
+# Arquivos Binários Gerados (não queremos versionar os executáveis)
+binarios/*.bin
+src/simulador/temp.asm
+src/simulador/temp.bin
+
+# Arquivos de sistema operacional
+.DS_Store
