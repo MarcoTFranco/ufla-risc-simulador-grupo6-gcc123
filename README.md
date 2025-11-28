@@ -4,6 +4,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python">
+  <img src="https://img.shields.io/badge/Assembly-UFLA--RISC-black?style=for-the-badge" alt="Assembly">
 </p>
 
 ## 1. CONTEXTO DO PROJETO
@@ -55,23 +56,25 @@ Este projeto implementa um simulador funcional para o processador didático RISC
 
 ## 2. INSTRUÇÕES PARA USO
 
-### 🚀 Como Rodar o Simulador
+### 🚀 Como Rodar o Assembler e o Simulador
 
-1.  Clone o repositório:
+1.  **Clone o repositório:**
     ```bash
-    git clone https://github.com/MarcoTFranco/ufla-risc-simulador-grupo6-gcc123.git
+    git clone [https://github.com/MarcoTFranco/ufla-risc-simulador-grupo6-gcc123.git](https://github.com/MarcoTFranco/ufla-risc-simulador-grupo6-gcc123.git)
     ```
-2.  Navegue até a pasta do simulador:
+
+2.  **Monte seu código (Assembly → Binário):**
+    Utilize o script principal do interpretador para converter seu `.asm` em `.bin`.
     ```bash
-    cd ufla-risc-simulador-grupo6-gcc123/src/simulador
+    # Sintaxe: python src/interpretador/main.py <entrada.asm> <saida.bin>
+    python src/interpretador/main.py exemplos/01_teste_add.asm binarios/01_teste.bin
     ```
-3.  Execute o simulador principal:
+
+3.  **Execute o Simulador:**
+    Com o binário gerado, execute o processador:
     ```bash
-    python main.py
-    ```
-4.  Para executar com um arquivo binário específico:
-    ```bash
-    python main.py binarios/programa.bin
+    # Exemplo de execução
+    python src/simulador/main.py binarios/01_teste.bin
     ```
 
 ## 3. INSTRUÇÕES PARA DEVS
@@ -80,36 +83,40 @@ Este projeto implementa um simulador funcional para o processador didático RISC
 
 -   **Python 3.x**
 
-### 3.2. Rodando os Testes
+### 🧪 Rodando os Testes
 
-Para verificar a integridade do simulador e garantir que todas as funcionalidades estão corretas, execute a suíte de testes automatizados com `unittest`:
+Para verificar a integridade do sistema, você pode executar a bateria de testes unitários a partir da raiz do projeto:
 
 ```bash
-# Execute a partir da pasta raiz do projeto
 python -m unittest discover
 ```
 ## 4. 🛠️ TECNOLOGIAS UTILIZADAS
 
 - **Linguagem Principal:**
-  - **Python 3: Utilizado para toda a lógica do simulador.**
+  - **Python 3: Utilizado para toda a lógica do simulador, parser e encoder.**
 - **Testes:**
-  - **Unittest: Biblioteca padrão do Python para testes unitários.**
+  - **Unittest: Biblioteca padrão do Python para validação das instruções.**
 
 ## 5. 📁 ESTRUTURA DO PROJETO
 
 ```
-├── binarios/
-│   └── binarios.txt      # Arquivos de instruções binárias
+├── binarios/             # Arquivos binários (.bin) gerados e de teste
 │
 ├── docs/                 # Documentação do projeto
 │
 ├── exemplos/             # Exemplos de código Assembly (.asm)
 │
 ├── src/
-│   └── simulador/
-│       ├── interpretador.py  # Converte Assembly para Binário
-│       ├── simulador.py      # Núcleo de execução da CPU (Main)
-│       └── testador.py       # Suite de testes automatizados
+│   ├── interpretador/    # Módulo Assembler
+│   │   ├── assembler.py  # Lógica de montagem
+│   │   ├── encoder.py    # Codificação de instruções (32 bits)
+│   │   ├── main.py       # CLI do Assembler
+│   │   ├── opcodes.py    # Definição de Opcodes
+│   │   └── parser.py     # Leitura e processamento de texto
+│   │
+│   └── simulador/        # Módulo do Processador
+│       ├── simulador.py  # Núcleo de execução da CPU
+│       └── main.py       # CLI do Simulador
 │
 ├── .gitignore
 └── README.md
