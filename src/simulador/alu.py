@@ -1,8 +1,7 @@
 """
-alu.py - Unidade Lógica e Aritmética (ALU) - VERSÃO CORRIGIDA
+alu.py - Unidade Lógica e Aritmética 
 
-Implementa todas as operações de cálculo (ALU, shifts, divisão, etc)
-e gerencia atualização de flags.
+Implementa todas as operações de cálculo e gerencia atualização de flags
 
 """
 
@@ -10,12 +9,12 @@ from utils import MASK32, to_s32, to_u32
 
 
 class ALUException(Exception):
-    """Exceção para erros da ALU (divisão por zero, etc)."""
+    """Exceção para erros da ALU """
     pass
 
 
 class ALU:
-    """Unidade Lógica e Aritmética do UFLA-RISC."""
+    """Unidade Lógica e Aritmética do UFLA-RISC"""
 
     def __init__(self):
         """Inicializa ALU."""
@@ -50,13 +49,13 @@ class ALU:
 
     def update_flags_arithmetic(self, result, a, b, is_sub=False):
         """
-        Atualiza flags para operações aritméticas (ADD, SUB).
+        Atualiza flags para operações aritméticas.
 
         Flags afetados:
         - neg: bit 31 do resultado
         - zero: resultado == 0
         - carry: overflow do cálculo
-        - overflow: overflow aritmético (two's complement)
+        - overflow: overflow aritmético
         """
         result_u32 = to_u32(result)
 
@@ -180,7 +179,7 @@ class ALU:
             self.flags_carry = 0
             self.flags_overflow = 0
             return 0
-            # Ou lançar exceção (descomente para modo strict):
+            #
             # raise ALUException("Divisão por zero")
 
         a_s32 = to_s32(a)
@@ -201,7 +200,7 @@ class ALU:
             self.flags_carry = 0
             self.flags_overflow = 0
             return 0
-            # Ou lançar exceção (descomente para modo strict):
+            # 
             # raise ALUException("Módulo por zero")
 
         a_s32 = to_s32(a)
