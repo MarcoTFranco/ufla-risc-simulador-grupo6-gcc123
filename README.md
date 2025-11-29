@@ -402,7 +402,7 @@ ufla-risc-simulador-grupo6-gcc123/
 ├── binarios/                      # Arquivos .bin gerados
 │   └── (gerados após montagem)
 │
-├── docs/                          # Documentação técnica
+├── documentos/                    # Documentação técnica
 │   └── manual_tecnico.pdf         # Manual completo
 │
 ├── exemplos/                      # Programas .asm de teste
@@ -448,10 +448,14 @@ ufla-risc-simulador-grupo6-gcc123/
 
 📄 **[Manual Técnico (PDF)](docs/manual_tecnico.pdf)**  
 Documentação completa do projeto incluindo:
+- Resumo da Máquina Simulada
 - Decisões de implementação
 - Descrição detalhada de todas as instruções
-- Análise de testes realizados
+- Tutorial de uso do interpretador
 - Diagramas de hardware
+- Código Fonte do Simulador
+- Análise de testes realizados
+- Conclusão
 
 ### 9.2. Decisões de Implementação
 
