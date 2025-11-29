@@ -175,7 +175,7 @@ class Simulator:
             self.alu_result = self.alu.sub(self.val_a, self.val_b)
             self.write_enable = True
 
-        elif op == 0x03:  # ZEROS - CORRIGIDO: sem parâmetro
+        elif op == 0x03:  # ZEROS
             self.alu_result = self.alu.zeros()
             self.write_enable = True
 
@@ -237,12 +237,12 @@ class Simulator:
         elif op == 0x13:  # JR
             self.control.jr(self.val_c)
 
-        elif op == 0x14:  # BEQ - CORRIGIDO: validação de range
-            target = self.branch_offset & 0xFF  # Garantir 8 bits (0-255)
+        elif op == 0x14:  # BEQ
+            target = self.branch_offset & 0xFF
             self.control.beq(self.val_a, self.val_b, target)
 
-        elif op == 0x15:  # BNE - CORRIGIDO: validação de range
-            target = self.branch_offset & 0xFF  # Garantir 8 bits (0-255)
+        elif op == 0x15:  # BNE
+            target = self.branch_offset & 0xFF
             self.control.bne(self.val_a, self.val_b, target)
 
         elif op == 0x16:  # J
@@ -290,8 +290,6 @@ class Simulator:
             print("Encerrando simulação...")
             self.halted = True
 
-        # CORREÇÃO CRÍTICA: Atualizar flags da CPU em EX/MEM
-        # (não em WB como estava antes)
         if self.decoder.affects_flags(self.opcode):
             alu_flags = self.alu.get_flags()
             self.cpu.set_flags(
@@ -305,7 +303,6 @@ class Simulator:
         """
         WB: Escreve resultado no registrador
 
-        CORRIGIDO: Flags NÃO são mais atualizados aqui (já foram em EX/MEM)
         """
         if self.write_enable and self.rc != 0:
             if self.opcode == 0x10:
