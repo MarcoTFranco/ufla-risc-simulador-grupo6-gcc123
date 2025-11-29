@@ -403,9 +403,7 @@ ufla-risc-simulador-grupo6-gcc123/
 │   └── (gerados após montagem)
 │
 ├── docs/                          # Documentação técnica
-│   ├── manual_tecnico.pdf         # Manual completo
-│   ├── instrucoes_adicionais.md   # Justificativas
-│   └── tutorial_uso.md            # Tutorial detalhado
+│   └── manual_tecnico.pdf         # Manual completo
 │
 ├── exemplos/                      # Programas .asm de teste
 │   ├── 01_teste_add.asm
@@ -454,12 +452,6 @@ Documentação completa do projeto incluindo:
 - Descrição detalhada de todas as instruções
 - Análise de testes realizados
 - Diagramas de hardware
-
-📝 **[Instruções Adicionais](docs/instrucoes_adicionais.md)**  
-Justificativa técnica das 8+ instruções implementadas pelo grupo
-
-📖 **[Tutorial de Uso](docs/tutorial_uso.md)**  
-Guia passo a passo para iniciantes
 
 ### 9.2. Decisões de Implementação
 
